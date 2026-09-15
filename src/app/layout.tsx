@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { inter, manrope } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,8 +22,18 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn(inter.variable, manrope.variable, "min-h-screen bg-background")}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+          storageKey="oryanda-portfolio-theme"
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
