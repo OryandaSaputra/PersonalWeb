@@ -19,6 +19,13 @@ const securityHeaders = [
   },
 ];
 
+const adminDiscoveryHeaders = [
+  {
+    key: "X-Robots-Tag",
+    value: "noindex, nofollow, noarchive, nosnippet",
+  },
+];
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
 
@@ -27,6 +34,10 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: securityHeaders,
+      },
+      {
+        source: "/admin/:path*",
+        headers: adminDiscoveryHeaders,
       },
     ];
   },
