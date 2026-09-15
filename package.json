@@ -18,10 +18,12 @@
     "db:migrate": "drizzle-kit migrate",
     "db:check": "drizzle-kit check",
     "db:studio": "drizzle-kit studio",
-    "db:verify": "tsx src/server/db/verify.ts"
+    "db:verify": "tsx src/server/db/verify.ts",
+    "auth:provision": "tsx scripts/provision-admin.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "1.1.0",
+    "@node-rs/argon2": "2.2.1",
     "@radix-ui/react-dialog": "1.1.23",
     "@radix-ui/react-label": "2.1.15",
     "@radix-ui/react-separator": "1.1.15",
@@ -36,9 +38,11 @@
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "server-only": "0.0.1",
-    "tailwind-merge": "3.7.0"
+    "tailwind-merge": "3.7.0",
+    "zod": "4.6.5"
   },
   "devDependencies": {
+    "@inquirer/prompts": "8.7.2",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
