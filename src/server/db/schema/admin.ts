@@ -64,3 +64,23 @@ export const adminSessions = pgTable(
     index("admin_sessions_revoked_at_idx").on(table.revokedAt),
   ],
 );
+
+export const adminLoginFailures = pgTable(
+  "admin_login_failures",
+  {
+    id: uuid("id").defaultRandom().primaryKey(),
+    emailHash: varchar("email_hash", { length: 128 }).notNull(),
+    ipHash: varchar("ip_hash", { length: 128 }).notNull(),
+    attemptedAt: timestamp("attempted_at", {
+      withTimezone: true,
+      mode: "date",
+    })
+      .defaultNow()
+      .notNull(),
+  },
+  (table) => [
+    index("admin_login_failures_email_attempted_idx").on(table.emailHash, table.attemptedAt),
+    index("admin_login_failures_ip_attempted_idx").on(table.ipHash, table.attemptedAt),
+    index("admin_login_failures_attempted_at_idx").on(table.attemptedAt),
+  ],
+);
