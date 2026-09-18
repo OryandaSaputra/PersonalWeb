@@ -28,7 +28,7 @@ export default async function AdminDashboardPage() {
       label: "Professional profile",
       ready: summary.profileConfigured,
       detail: summary.profileConfigured
-        ? "Profile data is available."
+        ? "Profile data is available and editable."
         : "Profile data has not been added yet.",
     },
     {
@@ -45,7 +45,7 @@ export default async function AdminDashboardPage() {
       detail:
         summary.totalSkills > 0
           ? `${summary.totalSkills} skill record(s) available.`
-          : "No skill record has been added yet.",
+          : "Skills management begins in Stage 7.",
     },
     {
       label: "Published projects",
@@ -53,7 +53,7 @@ export default async function AdminDashboardPage() {
       detail:
         summary.publishedProjects > 0
           ? `${summary.publishedProjects} project(s) are published.`
-          : "No project is published yet.",
+          : "Project management begins in Stage 8.",
     },
     {
       label: "Certifications",
@@ -61,7 +61,7 @@ export default async function AdminDashboardPage() {
       detail:
         summary.totalCertifications > 0
           ? `${summary.totalCertifications} certification record(s) available.`
-          : "No certification record has been added yet.",
+          : "Certification management begins in Stage 7.",
     },
   ];
 
@@ -70,7 +70,7 @@ export default async function AdminDashboardPage() {
       <AdminPageHeader
         eyebrow="Portfolio Overview"
         title="Dashboard"
-        description="Review the current portfolio content state from one private workspace. Counts below are read directly from the development database."
+        description="Review portfolio content state and continue managing the professional information currently available in the CMS."
         actions={
           <Badge variant="success">
             <CircleCheck className="size-3.5" aria-hidden="true" />
@@ -87,7 +87,6 @@ export default async function AdminDashboardPage() {
           >
             Content summary
           </h2>
-
           <p className="mt-1 text-sm text-muted-foreground">
             Current record counts in Neon PostgreSQL.
           </p>
@@ -100,35 +99,30 @@ export default async function AdminDashboardPage() {
             description={`${summary.publishedProjects} published`}
             icon={FolderKanban}
           />
-
           <DashboardStatCard
             label="Experience"
             value={summary.totalExperiences}
             description="Professional experience records"
             icon={BriefcaseBusiness}
           />
-
           <DashboardStatCard
             label="Skills"
             value={summary.totalSkills}
             description="Technical skill records"
             icon={Sparkles}
           />
-
           <DashboardStatCard
             label="Certifications"
             value={summary.totalCertifications}
             description="Professional credentials"
             icon={Award}
           />
-
           <DashboardStatCard
             label="Unread Messages"
             value={summary.unreadMessages}
             description="Contact messages awaiting review"
             icon={Mail}
           />
-
           <DashboardStatCard
             label="Profile"
             value={summary.profileConfigured ? "Configured" : "Not set"}
@@ -147,12 +141,8 @@ export default async function AdminDashboardPage() {
         <Card>
           <CardHeader>
             <CardTitle id="content-readiness-heading">Content readiness</CardTitle>
-
-            <CardDescription>
-              A factual view of which portfolio content areas currently contain data.
-            </CardDescription>
+            <CardDescription>A factual view of portfolio data availability.</CardDescription>
           </CardHeader>
-
           <CardContent>
             <ul className="divide-y divide-border">
               {readinessItems.map((item) => (
@@ -168,10 +158,8 @@ export default async function AdminDashboardPage() {
                       aria-hidden="true"
                     />
                   )}
-
                   <div className="min-w-0">
                     <p className="text-sm font-medium">{item.label}</p>
-
                     <p className="mt-1 text-sm leading-6 text-muted-foreground">{item.detail}</p>
                   </div>
                 </li>
@@ -182,29 +170,24 @@ export default async function AdminDashboardPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Stage 5 scope</CardTitle>
-
+            <CardTitle>CMS availability</CardTitle>
             <CardDescription>
-              The dashboard is ready, while content editing is intentionally deferred to the
-              relevant CMS stages.
+              Content modules are activated only after their complete CRUD and authorization flow is
+              ready.
             </CardDescription>
           </CardHeader>
-
           <CardContent className="space-y-4">
-            <div className="rounded-xl border border-border bg-muted/40 p-4">
+            <div className="rounded-xl border border-success/25 bg-success/5 p-4">
               <p className="text-sm font-medium">Available now</p>
-
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                Secure Admin login, protected workspace, navigation, dashboard summaries, theme
-                controls, and logout.
+                Profile, social links, professional experience, organization experience, and
+                education.
               </p>
             </div>
-
             <div className="rounded-xl border border-border p-4">
               <p className="text-sm font-medium">Added next</p>
-
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                Profile, experience, organization, and education management begin in Stage 6.
+                Skills and certifications management begin in Stage 7.
               </p>
             </div>
           </CardContent>
@@ -221,28 +204,26 @@ export default async function AdminDashboardPage() {
           >
             Quick actions
           </h2>
-
           <p className="mt-1 text-sm text-muted-foreground">
-            Planned high-frequency actions are shown now and will become active with their
-            corresponding CMS stages.
+            High-frequency Admin actions become active only when their target CMS is available.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-3">
           <DashboardQuickAction
             title="Edit Profile"
-            description="Manage professional identity, introduction, about content, location, contact information, and profile data."
+            description="Manage professional identity, introduction, location, contact information, and social links."
             availabilityLabel="Stage 6"
             icon={PencilLine}
+            href="/admin/profile"
+            actionLabel="Edit profile"
           />
-
           <DashboardQuickAction
             title="Add Project"
             description="Create a professional project case study with publishing status, role, solution, technologies, and project details."
             availabilityLabel="Stage 8"
             icon={Plus}
           />
-
           <DashboardQuickAction
             title="Upload CV"
             description="Replace the public downloadable CV through the private media management workflow."

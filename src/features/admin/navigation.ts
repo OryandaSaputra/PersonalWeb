@@ -30,45 +30,16 @@ export const ADMIN_NAVIGATION_GROUPS: AdminNavigationGroup[] = [
   {
     label: "Overview",
     items: [
-      {
-        label: "Dashboard",
-        href: "/admin/dashboard",
-        icon: LayoutDashboard,
-        available: true,
-      },
+      { label: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard, available: true },
     ],
   },
   {
     label: "Portfolio Content",
     items: [
-      {
-        label: "Profile",
-        href: "/admin/profile",
-        icon: UserRound,
-        available: false,
-        availabilityLabel: "Stage 6",
-      },
-      {
-        label: "Experience",
-        href: "/admin/experience",
-        icon: BriefcaseBusiness,
-        available: false,
-        availabilityLabel: "Stage 6",
-      },
-      {
-        label: "Organizations",
-        href: "/admin/organizations",
-        icon: UsersRound,
-        available: false,
-        availabilityLabel: "Stage 6",
-      },
-      {
-        label: "Education",
-        href: "/admin/education",
-        icon: GraduationCap,
-        available: false,
-        availabilityLabel: "Stage 6",
-      },
+      { label: "Profile", href: "/admin/profile", icon: UserRound, available: true },
+      { label: "Experience", href: "/admin/experience", icon: BriefcaseBusiness, available: true },
+      { label: "Organizations", href: "/admin/organizations", icon: UsersRound, available: true },
+      { label: "Education", href: "/admin/education", icon: GraduationCap, available: true },
       {
         label: "Skills",
         href: "/admin/skills",
@@ -126,50 +97,17 @@ export const ADMIN_NAVIGATION_GROUPS: AdminNavigationGroup[] = [
 ];
 
 const ADMIN_PAGE_TITLES = [
-  {
-    prefix: "/admin/dashboard",
-    title: "Dashboard",
-  },
-  {
-    prefix: "/admin/profile",
-    title: "Profile",
-  },
-  {
-    prefix: "/admin/experience",
-    title: "Experience",
-  },
-  {
-    prefix: "/admin/organizations",
-    title: "Organizations",
-  },
-  {
-    prefix: "/admin/education",
-    title: "Education",
-  },
-  {
-    prefix: "/admin/skills",
-    title: "Skills",
-  },
-  {
-    prefix: "/admin/projects",
-    title: "Projects",
-  },
-  {
-    prefix: "/admin/certifications",
-    title: "Certifications",
-  },
-  {
-    prefix: "/admin/messages",
-    title: "Messages",
-  },
-  {
-    prefix: "/admin/media",
-    title: "Media",
-  },
-  {
-    prefix: "/admin/settings",
-    title: "Settings",
-  },
+  { prefix: "/admin/dashboard", title: "Dashboard" },
+  { prefix: "/admin/profile", title: "Profile" },
+  { prefix: "/admin/experience", title: "Experience" },
+  { prefix: "/admin/organizations", title: "Organizations" },
+  { prefix: "/admin/education", title: "Education" },
+  { prefix: "/admin/skills", title: "Skills" },
+  { prefix: "/admin/projects", title: "Projects" },
+  { prefix: "/admin/certifications", title: "Certifications" },
+  { prefix: "/admin/messages", title: "Messages" },
+  { prefix: "/admin/media", title: "Media" },
+  { prefix: "/admin/settings", title: "Settings" },
 ] as const;
 
 export function getAdminPageTitle(pathname: string): string {
