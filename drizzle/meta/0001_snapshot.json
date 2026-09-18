@@ -202,12 +202,8 @@
           "name": "admin_sessions_admin_user_id_admin_users_id_fk",
           "tableFrom": "admin_sessions",
           "tableTo": "admin_users",
-          "columnsFrom": [
-            "admin_user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["admin_user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -217,9 +213,7 @@
         "admin_sessions_token_hash_unique": {
           "name": "admin_sessions_token_hash_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "token_hash"
-          ]
+          "columns": ["token_hash"]
         }
       },
       "policies": {},
@@ -300,9 +294,7 @@
         "admin_users_email_unique": {
           "name": "admin_users_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
@@ -430,12 +422,8 @@
           "name": "certifications_certificate_media_id_media_assets_id_fk",
           "tableFrom": "certifications",
           "tableTo": "media_assets",
-          "columnsFrom": [
-            "certificate_media_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["certificate_media_id"],
+          "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         }
@@ -1109,9 +1097,7 @@
         "media_assets_storage_key_unique": {
           "name": "media_assets_storage_key_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "storage_key"
-          ]
+          "columns": ["storage_key"]
         }
       },
       "policies": {},
@@ -1236,12 +1222,8 @@
           "name": "profiles_profile_image_media_id_media_assets_id_fk",
           "tableFrom": "profiles",
           "tableTo": "media_assets",
-          "columnsFrom": [
-            "profile_image_media_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["profile_image_media_id"],
+          "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         },
@@ -1249,12 +1231,8 @@
           "name": "profiles_cv_media_id_media_assets_id_fk",
           "tableFrom": "profiles",
           "tableTo": "media_assets",
-          "columnsFrom": [
-            "cv_media_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["cv_media_id"],
+          "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         }
@@ -1383,12 +1361,8 @@
           "name": "social_links_profile_id_profiles_id_fk",
           "tableFrom": "social_links",
           "tableTo": "profiles",
-          "columnsFrom": [
-            "profile_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["profile_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -1513,12 +1487,8 @@
           "name": "project_images_project_id_projects_id_fk",
           "tableFrom": "project_images",
           "tableTo": "projects",
-          "columnsFrom": [
-            "project_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["project_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1526,12 +1496,8 @@
           "name": "project_images_media_asset_id_media_assets_id_fk",
           "tableFrom": "project_images",
           "tableTo": "media_assets",
-          "columnsFrom": [
-            "media_asset_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["media_asset_id"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "no action"
         }
@@ -1593,12 +1559,8 @@
           "name": "project_technologies_project_id_projects_id_fk",
           "tableFrom": "project_technologies",
           "tableTo": "projects",
-          "columnsFrom": [
-            "project_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["project_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1606,12 +1568,8 @@
           "name": "project_technologies_technology_id_technologies_id_fk",
           "tableFrom": "project_technologies",
           "tableTo": "technologies",
-          "columnsFrom": [
-            "technology_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["technology_id"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "no action"
         }
@@ -1619,10 +1577,7 @@
       "compositePrimaryKeys": {
         "project_technologies_pk": {
           "name": "project_technologies_pk",
-          "columns": [
-            "project_id",
-            "technology_id"
-          ]
+          "columns": ["project_id", "technology_id"]
         }
       },
       "uniqueConstraints": {},
@@ -1856,9 +1811,7 @@
         "projects_slug_unique": {
           "name": "projects_slug_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "slug"
-          ]
+          "columns": ["slug"]
         }
       },
       "policies": {},
@@ -1931,16 +1884,12 @@
         "technologies_name_unique": {
           "name": "technologies_name_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "name"
-          ]
+          "columns": ["name"]
         },
         "technologies_slug_unique": {
           "name": "technologies_slug_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "slug"
-          ]
+          "columns": ["slug"]
         }
       },
       "policies": {},
@@ -2111,16 +2060,12 @@
         "skill_categories_name_unique": {
           "name": "skill_categories_name_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "name"
-          ]
+          "columns": ["name"]
         },
         "skill_categories_slug_unique": {
           "name": "skill_categories_slug_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "slug"
-          ]
+          "columns": ["slug"]
         }
       },
       "policies": {},
@@ -2249,12 +2194,8 @@
           "name": "skills_category_id_skill_categories_id_fk",
           "tableFrom": "skills",
           "tableTo": "skill_categories",
-          "columnsFrom": [
-            "category_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["category_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -2275,45 +2216,27 @@
     "public.case_study_visibility": {
       "name": "case_study_visibility",
       "schema": "public",
-      "values": [
-        "public",
-        "limited",
-        "private"
-      ]
+      "values": ["public", "limited", "private"]
     },
     "public.contact_message_status": {
       "name": "contact_message_status",
       "schema": "public",
-      "values": [
-        "unread",
-        "read",
-        "archived"
-      ]
+      "values": ["unread", "read", "archived"]
     },
     "public.media_visibility": {
       "name": "media_visibility",
       "schema": "public",
-      "values": [
-        "public",
-        "private"
-      ]
+      "values": ["public", "private"]
     },
     "public.project_image_type": {
       "name": "project_image_type",
       "schema": "public",
-      "values": [
-        "cover",
-        "screenshot"
-      ]
+      "values": ["cover", "screenshot"]
     },
     "public.project_status": {
       "name": "project_status",
       "schema": "public",
-      "values": [
-        "draft",
-        "published",
-        "hidden"
-      ]
+      "values": ["draft", "published", "hidden"]
     }
   },
   "schemas": {},
