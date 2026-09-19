@@ -44,8 +44,8 @@ export default async function AdminDashboardPage() {
       ready: summary.totalSkills > 0,
       detail:
         summary.totalSkills > 0
-          ? `${summary.totalSkills} skill record(s) available.`
-          : "Skills management begins in Stage 7.",
+          ? `${summary.totalSkills} skill record(s) available and editable.`
+          : "No skill record has been added yet.",
     },
     {
       label: "Published projects",
@@ -60,8 +60,8 @@ export default async function AdminDashboardPage() {
       ready: summary.totalCertifications > 0,
       detail:
         summary.totalCertifications > 0
-          ? `${summary.totalCertifications} certification record(s) available.`
-          : "Certification management begins in Stage 7.",
+          ? `${summary.totalCertifications} certification record(s) available and editable.`
+          : "No certification record has been added yet.",
     },
   ];
 
@@ -179,15 +179,18 @@ export default async function AdminDashboardPage() {
           <CardContent className="space-y-4">
             <div className="rounded-xl border border-success/25 bg-success/5 p-4">
               <p className="text-sm font-medium">Available now</p>
+
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                Profile, social links, professional experience, organization experience, and
-                education.
+                Profile, social links, experience, organizations, education, skills, and
+                certifications.
               </p>
             </div>
+
             <div className="rounded-xl border border-border p-4">
               <p className="text-sm font-medium">Added next</p>
+
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                Skills and certifications management begin in Stage 7.
+                Projects, technologies, and professional case-study management begin in Stage 8.
               </p>
             </div>
           </CardContent>

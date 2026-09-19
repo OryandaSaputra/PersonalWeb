@@ -30,22 +30,46 @@ export const ADMIN_NAVIGATION_GROUPS: AdminNavigationGroup[] = [
   {
     label: "Overview",
     items: [
-      { label: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard, available: true },
+      {
+        label: "Dashboard",
+        href: "/admin/dashboard",
+        icon: LayoutDashboard,
+        available: true,
+      },
     ],
   },
   {
     label: "Portfolio Content",
     items: [
-      { label: "Profile", href: "/admin/profile", icon: UserRound, available: true },
-      { label: "Experience", href: "/admin/experience", icon: BriefcaseBusiness, available: true },
-      { label: "Organizations", href: "/admin/organizations", icon: UsersRound, available: true },
-      { label: "Education", href: "/admin/education", icon: GraduationCap, available: true },
+      {
+        label: "Profile",
+        href: "/admin/profile",
+        icon: UserRound,
+        available: true,
+      },
+      {
+        label: "Experience",
+        href: "/admin/experience",
+        icon: BriefcaseBusiness,
+        available: true,
+      },
+      {
+        label: "Organizations",
+        href: "/admin/organizations",
+        icon: UsersRound,
+        available: true,
+      },
+      {
+        label: "Education",
+        href: "/admin/education",
+        icon: GraduationCap,
+        available: true,
+      },
       {
         label: "Skills",
         href: "/admin/skills",
         icon: Sparkles,
-        available: false,
-        availabilityLabel: "Stage 7",
+        available: true,
       },
       {
         label: "Projects",
@@ -58,8 +82,7 @@ export const ADMIN_NAVIGATION_GROUPS: AdminNavigationGroup[] = [
         label: "Certifications",
         href: "/admin/certifications",
         icon: Award,
-        available: false,
-        availabilityLabel: "Stage 7",
+        available: true,
       },
     ],
   },
