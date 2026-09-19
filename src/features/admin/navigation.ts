@@ -75,8 +75,7 @@ export const ADMIN_NAVIGATION_GROUPS: AdminNavigationGroup[] = [
         label: "Projects",
         href: "/admin/projects",
         icon: FolderKanban,
-        available: false,
-        availabilityLabel: "Stage 8",
+        available: true,
       },
       {
         label: "Certifications",
@@ -120,17 +119,50 @@ export const ADMIN_NAVIGATION_GROUPS: AdminNavigationGroup[] = [
 ];
 
 const ADMIN_PAGE_TITLES = [
-  { prefix: "/admin/dashboard", title: "Dashboard" },
-  { prefix: "/admin/profile", title: "Profile" },
-  { prefix: "/admin/experience", title: "Experience" },
-  { prefix: "/admin/organizations", title: "Organizations" },
-  { prefix: "/admin/education", title: "Education" },
-  { prefix: "/admin/skills", title: "Skills" },
-  { prefix: "/admin/projects", title: "Projects" },
-  { prefix: "/admin/certifications", title: "Certifications" },
-  { prefix: "/admin/messages", title: "Messages" },
-  { prefix: "/admin/media", title: "Media" },
-  { prefix: "/admin/settings", title: "Settings" },
+  {
+    prefix: "/admin/dashboard",
+    title: "Dashboard",
+  },
+  {
+    prefix: "/admin/profile",
+    title: "Profile",
+  },
+  {
+    prefix: "/admin/experience",
+    title: "Experience",
+  },
+  {
+    prefix: "/admin/organizations",
+    title: "Organizations",
+  },
+  {
+    prefix: "/admin/education",
+    title: "Education",
+  },
+  {
+    prefix: "/admin/skills",
+    title: "Skills",
+  },
+  {
+    prefix: "/admin/projects",
+    title: "Projects",
+  },
+  {
+    prefix: "/admin/certifications",
+    title: "Certifications",
+  },
+  {
+    prefix: "/admin/messages",
+    title: "Messages",
+  },
+  {
+    prefix: "/admin/media",
+    title: "Media",
+  },
+  {
+    prefix: "/admin/settings",
+    title: "Settings",
+  },
 ] as const;
 
 export function getAdminPageTitle(pathname: string): string {
