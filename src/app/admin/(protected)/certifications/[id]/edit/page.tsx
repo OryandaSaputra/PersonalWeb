@@ -1,6 +1,9 @@
+import { ImageIcon } from "lucide-react";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { z } from "zod";
 
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AdminPageHeader } from "@/features/admin/components/admin-page-header";
 import { CertificationForm } from "@/features/admin/certifications/components/certification-form";
@@ -31,6 +34,14 @@ export default async function EditCertificationPage({ params }: EditCertificatio
         eyebrow="Certifications"
         title="Edit certification"
         description={certification.name}
+        actions={
+          <Button asChild variant="outline">
+            <Link href={`/admin/certifications/${certification.id}/media`}>
+              <ImageIcon className="size-4" aria-hidden="true" />
+              Certificate image
+            </Link>
+          </Button>
+        }
       />
 
       <Card>

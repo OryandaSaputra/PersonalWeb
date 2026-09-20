@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowLeft, ImageOff, LoaderCircle, Save } from "lucide-react";
+import { ArrowLeft, LoaderCircle, Save } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -75,17 +75,6 @@ export function CertificationForm({
           <AlertDescription>{errors.root.message}</AlertDescription>
         </Alert>
       ) : null}
-
-      <Alert variant="info">
-        <ImageOff aria-hidden="true" />
-
-        <AlertTitle>Certificate media is not part of Stage 7</AlertTitle>
-
-        <AlertDescription>
-          Certificate image upload and replacement are added in Stage 9. This form manages
-          certification metadata only.
-        </AlertDescription>
-      </Alert>
 
       <div className="grid gap-5 md:grid-cols-2">
         <div className="space-y-2 md:col-span-2">
