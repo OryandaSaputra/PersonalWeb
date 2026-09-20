@@ -104,8 +104,7 @@ export const ADMIN_NAVIGATION_GROUPS: AdminNavigationGroup[] = [
         label: "Media",
         href: "/admin/media",
         icon: FileImage,
-        available: false,
-        availabilityLabel: "Stage 9",
+        available: true,
       },
       {
         label: "Settings",
