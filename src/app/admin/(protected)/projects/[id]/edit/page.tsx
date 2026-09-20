@@ -1,6 +1,9 @@
+import { Images } from "lucide-react";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { z } from "zod";
 
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { AdminPageHeader } from "@/features/admin/components/admin-page-header";
 import { ProjectForm } from "@/features/admin/projects/components/project-form";
@@ -39,7 +42,19 @@ export default async function EditProjectPage({ params }: EditProjectPageProps) 
 
   return (
     <div className="space-y-8">
-      <AdminPageHeader eyebrow="Projects" title="Edit project" description={project.name} />
+      <AdminPageHeader
+        eyebrow="Projects"
+        title="Edit project"
+        description={project.name}
+        actions={
+          <Button asChild variant="outline">
+            <Link href={`/admin/projects/${project.id}/media`}>
+              <Images className="size-4" aria-hidden="true" />
+              Manage media
+            </Link>
+          </Button>
+        }
+      />
 
       <Card>
         <CardHeader>
@@ -129,10 +144,18 @@ export default async function EditProjectPage({ params }: EditProjectPageProps) 
           <CardTitle>Project media</CardTitle>
 
           <CardDescription>
-            Thumbnail, screenshots, captions, alt text, image type, and image ordering are
-            implemented in Stage 9.
+            Cover and screenshot management is available in the dedicated media workspace.
           </CardDescription>
         </CardHeader>
+
+        <CardContent>
+          <Button asChild>
+            <Link href={`/admin/projects/${project.id}/media`}>
+              <Images className="size-4" aria-hidden="true" />
+              Manage project media
+            </Link>
+          </Button>
+        </CardContent>
       </Card>
     </div>
   );
