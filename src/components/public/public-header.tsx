@@ -9,16 +9,17 @@ import type { PublicNavigationItem } from "@/features/public/home/types";
 type PublicHeaderProps = {
   siteName: string;
   items: PublicNavigationItem[];
+  homeHref?: string;
 };
 
-export function PublicHeader({ siteName, items }: PublicHeaderProps) {
+export function PublicHeader({ siteName, items, homeHref = "#home" }: PublicHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex min-h-16 w-full max-w-7xl items-center justify-between gap-4 px-5 sm:px-6 lg:px-8">
         <a
-          href="#home"
+          href={homeHref}
           className="group inline-flex min-w-0 items-center gap-3 rounded-lg focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
           onClick={() => setMobileOpen(false)}
         >

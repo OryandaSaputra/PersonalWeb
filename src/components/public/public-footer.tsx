@@ -6,9 +6,15 @@ type PublicFooterProps = {
   siteName: string;
   siteTagline: string | null;
   socialLinks: PublicSocialLink[];
+  backToTopHref?: string;
 };
 
-export function PublicFooter({ siteName, siteTagline, socialLinks }: PublicFooterProps) {
+export function PublicFooter({
+  siteName,
+  siteTagline,
+  socialLinks,
+  backToTopHref = "#home",
+}: PublicFooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -42,7 +48,7 @@ export function PublicFooter({ siteName, siteTagline, socialLinks }: PublicFoote
           ))}
 
           <a
-            href="#home"
+            href={backToTopHref}
             aria-label="Back to top"
             className="inline-flex size-10 items-center justify-center rounded-xl border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
